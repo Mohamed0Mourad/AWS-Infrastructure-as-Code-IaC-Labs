@@ -16,18 +16,24 @@ In this lab, you will create a basic AWS infrastructure setup using Terraform. T
 - EC2 Instances (Bastion Host and Application Server)
 
 ### Steps
-1. **Create VPC**: Define a VPC with a specified CIDR block.
-2. **Create Internet Gateway**: Attach an Internet Gateway to the VPC.
-3. **Create Public Route Table**: Define a route table for public subnets.
-4. **Create Private Route Table**: Define a route table for private subnets.
-5. **Create Public Route**: Add a route to the public route table for internet access.
-6. **Attach Public Route Table to Subnets**: Associate the public route table with public subnets.
-7. **Create Security Group (Allow SSH from 0.0.0.0/0)**: Define a security group that allows SSH access from any IP.
-8. **Create Security Group (Allow SSH and Port 3000 from VPC CIDR)**: Define a security group that allows SSH and port 3000 access only from within the VPC.
-9. **Create EC2 (Bastion) in Public Subnet**: Launch a bastion host in the public subnet with the security group created in step 7.
-10. **Create EC2 (Application) in Private Subnet**: Launch an application server in the private subnet with the security group created in step 8.
+1. **Configure AWS Provider**: Define the AWS provider with the desired region and profile.
+2. **Create VPC**: Define a VPC with a specified CIDR block.
+3. **Create Internet Gateway**: Attach an Internet Gateway to the VPC.
+4. **Create Public Subnets**: Create two public subnets in different availability zones.
+5. **Create Private Subnets**: Create two private subnets in different availability zones.
+6. **Create Public Route Table**: Define a route table for public subnets.
+7. **Create Private Route Table**: Define a route table for private subnets.
+8. **Create NAT Gateway and Elastic IP**: Create a NAT Gateway and associate it with an Elastic IP.
+9. **Create Public Route**: Add a route to the public route table for internet access.
+10. **Create Private Route**: Add a route to the private route table for internet access through the NAT Gateway.
+11. **Attach Public Route Table to Subnets**: Associate the public route table with public subnets.
+12. **Create Security Group (Allow SSH from 0.0.0.0/0)**: Define a security group that allows SSH access from any IP.
+13. **Create Security Group (Allow SSH and Port 3000 from VPC CIDR)**: Define a security group that allows SSH and port 3000 access only from within the VPC.
+14. **Create EC2 (Bastion) in Public Subnet**: Launch a bastion host in the public subnet with the security group created in step 12.
+15. **Create EC2 (Application) in Private Subnet**: Launch an application server in the private subnet with the security group created in step 13.
 
 ---
+
 
 ## Lab 2: Advanced Terraform Practices and Multi-Environment Setup
 
